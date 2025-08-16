@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+body {
+  overflow-x: hidden;
+  zoom: 0.9;
+}
+
+:root {
+  --default: #ffffff;
+
+  --teal-100-bg: #eaf6f6;
+  --teal-100: #eaf6f6;
+  --teal-200: #d5eded;
+  --teal-300: #bfe4e4;
+  --teal-400: #aadbdb;
+  --teal-500: #93d2d2;
+  --teal-600: #7bc9ca;
+  --teal-700: #61bfc1;
+  --teal-800: #42b6b8;
+  --teal-900: #03adb0;
+
+  --gray: #5f8d8e;
+  --heading-black: #003f40;
+  --heading-black-gradient: linear-gradient(
+    to bottom,
+    var(--teal-900),
+    #000000
+  );
+  --hero-gradient: linear-gradient(to right, #003f40, #00a3a6);
+  --radius-primary: 21px;
+}
+
+@layer components {
+  .p-tb {
+    @apply py-20;
+  }
+  .hero-line {
+    @apply before:absolute before:h-[5px] before:bg-[var(--default)] before:top-0 before:left-0 before:w-full before:md:w-[80%] before:rounded-2xl;
+  }
+}
+
+/* Custom style */
+.menu-shadow {
+  box-shadow: -5px 0px 2px -2px #00000019;
+}
+
+.gradient-heading {
+  background: var(--heading-black-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.secondary-btn {
+  background-color: #f3fff2;
+  border: none;
+  outline: none;
+  color: var(--gray);
+}
+
+.over-flow {
+  overflow-x: hidden;
+}
+
+.btn-animation::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(47, 47, 47);
+  z-index: 1;
+  transform-origin: center;
+  transform: scale(0);
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+.btn-animation:hover::after {
+  transform: scale(1);
+}
+
+.feat_bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.feat_0_Bg {
+  background-image: url("../public/assets/images/feat_1.jpg");
+}
+.feat_1_Bg {
+  background-image: url("../public/assets/images/feat_2.jpeg");
+}
+.feat_2_Bg {
+  background-image: url("../public/assets/images/feat_3.jpeg");
+}
+
+.hero-mask {
+  width: 700px; /* section width */
+  height: 300px; /* section height */
+
+  /* background image inside the mask */
+  background-image: url("../public/assets/images/hero_about.jpg");
+  background-size: cover; /* change background size here */
+  background-position: right; /* change background position here */
+
+  /* mask image */
+  -webkit-mask-image: url("../public/assets/images/industry.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain; /* change mask size here */
+  -webkit-mask-position: center; /* move mask position */
+
+  mask-image: url("../public/assets/images/industry.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  /* for visibility */
+  background-color: lightgray;
+}
+

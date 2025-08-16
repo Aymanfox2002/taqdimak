@@ -1,0 +1,173 @@
+{
+  "header": {
+    "title": "Global Scholarships Hub",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "servicesDropdown": {
+        "service-1": "QuickShift Solutions",
+        "service-2": "Box & Go Logistics",
+        "service-3": "TaqClean Express",
+        "service-4": "SafeHands Movers",
+        "service-5": "DocsOnTheGo",
+        "service-6": "TaskBuddy Assistants",
+        "service-7": "TaqStore Vault",
+        "service-8": "EcoTaq Recycling"
+      }
+    },
+    "contact": "Contact",
+    "getStartButton": "Get started",
+    "languages": "Languages"
+  },
+  "footer": {
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact",
+      "blog": "Blog"
+    }
+  },
+  "home": {
+    "hero": {
+      "mainTitle": "Unlock Your Future: Your Guide to Global Scholarships",
+      "paragraph": "Discover a world of opportunities with our comprehensive scholarship resources.",
+      "applyNow": "Apply Now",
+      "viewServices": "View Services"
+    },
+    "aboutSnippet": {
+      "title": "Your Scholarship Partner",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero",
+      "aboutUs": "About us",
+      "viewServices": "View services"
+    },
+    "testimonials": {
+      "sectionTitle": {
+        "title": "What our users say",
+        "description": "From intuitive design to powerful features, our app has become an essential tool for users around the world"
+      },
+      "members": [
+        {
+          "text": "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
+          "name": "Jamie Rivera",
+          "university": "Harvard University"
+        },
+        {
+          "text": "Our team's productivity has skyrocketed since we started using this tool.",
+          "name": "Josh Smith",
+          "university": "Stanford University"
+        },
+        {
+          "text": "This app has completely transformed how I manage my projects and deadlines.",
+          "name": "Morgan Lee",
+          "university": "MIT"
+        },
+        {
+          "text": "I was amazed at how quickly we were able to integrate this app into our workflow.",
+          "name": "Casey Jordan",
+          "university": "Yale University"
+        },
+        {
+          "text": "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+          "name": "Taylor Kim",
+          "university": "Columbia University"
+        },
+        {
+          "text": "The customizability and integration capabilities of this app are top-notch.",
+          "name": "Riley Smith",
+          "university": "Princeton University"
+        },
+        {
+          "text": "Adopting this app for our team has streamlined our project management and improved communication across the board.",
+          "name": "Jordan Patels",
+          "university": "University of Chicago"
+        },
+        {
+          "text": "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+          "name": "Sam Dawson",
+          "university": "Berkeley"
+        },
+        {
+          "text": "Its user-friendly interface and robust features support our diverse needs.",
+          "name": "Casey Harper",
+          "university": "UCLA"
+        }
+      ]
+    }
+  },
+  "about": {
+    "missionTitle": "Mission & Vissions",
+    "missionVision": "Our mission is to make global education accessible to all by providing up-to-date scholarship information and personalized guidance. We envision a world where every student can pursue their academic goals without financial barriers.",
+    "contactBtn": "Contact us",
+    "whyUs": {
+      "title": "Why Us?",
+      "desc": "We're committed to providing a seamless experience for our users, with a focus on simplicity and ease of use.",
+      "performance": {
+        "title": "Fast Performance",
+        "desc": "Experience blazing-fast load times and smooth interactions"
+      },
+      "Design": {
+        "title": "Modern Design",
+        "desc": "Beautiful, responsive layouts built with the latest tech"
+      },
+      "ux": {
+        "title": "User Friendly",
+        "desc": "Designed with a focus on simplicity and usability"
+      }
+    },
+    "providerBio": "Founded by passionate educators, our platform is built on the belief that education transforms lives. We combine research, mentorship, and real-world experience to guide students through the scholarship process. Our values are rooted in integrity, inclusivity, and lifelong learning. We are committed to supporting students at every stage of their academic journey.",
+
+    "successStories": [
+      {
+        "name": "Alice Johnson",
+        "description": "Alice secured a full scholarship to study engineering in Germany, thanks to our tailored application support.",
+        "study": "Mechanical Engineering",
+        "university": "Technical University of Munich"
+      },
+      {
+        "name": "Mohammed Al-Farsi",
+        "description": "Mohammed overcame financial barriers and is now pursuing a master's in Canada with our guidance.",
+        "study": "Computer Science",
+        "university": "University of Toronto"
+      }
+    ]
+  },
+  "services": {
+    "sectionTitle": {
+      "title": "Browse our set of features",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero"
+    },
+    "list": [
+      {
+        "serviceName": "Scholarship Search",
+        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+      },
+      {
+        "serviceName": "Application Review",
+        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+      },
+      {
+        "serviceName": "CV Optimization",
+        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I apply for a scholarship?",
+        "answer": "Browse our listings, select a scholarship, and follow the application instructions provided."
+      },
+      {
+        "question": "Are your services free?",
+        "answer": "Basic services are free, with premium options available for additional support."
+      }
+    ],
+    "process": {
+      "step1": "Sign up and create your profile.",
+      "step2": "Browse and shortlist scholarships.",
+      "step3": "Prepare your documents and essays.",
+      "step4": "Submit your applications with our guidance.",
+      "step5": "Receive results and next steps."
+    }
+  }
+}
