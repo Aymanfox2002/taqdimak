@@ -1,4 +1,4 @@
-`use client`;
+'use client';
 import React from "react";
 
 type titleTypes = {
@@ -19,7 +19,7 @@ const TitleSection = ({ title, desc, desktopAlignLeft, marginBottom = 20 }: titl
        }`}
     >
       <div className=" max-w-[900px]">
-        <h2 className={`text-4xl gradient-heading ${desc && "mb-4"}`}>
+        <h2 className={`text-4xl gradient-heading pb-1 ${desc && "mb-4"}`}>
           {title}
         </h2>
         {desc && (

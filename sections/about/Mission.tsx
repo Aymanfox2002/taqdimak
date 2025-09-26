@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { Buttons, Container, TitleSection } from "../../components";
+import { Buttons, Container, TitleSection } from "../../components/index";
 import mission_aboutPage from '../../public/assets/images/mission_aboutPage.jpg'
 import { useTranslation } from "react-i18next";
 

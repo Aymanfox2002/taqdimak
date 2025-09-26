@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdDoubleArrow, MdOutlineGTranslate } from "react-icons/md";
@@ -14,6 +14,7 @@ const LangBtnMobile = ({ lang, setLang }: langInter) => {
     const newLang = value;
     i18n.changeLanguage(newLang);
     setLang(newLang);
+    window.location.reload();
   };
   const { t } = useTranslation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -22,9 +23,7 @@ const LangBtnMobile = ({ lang, setLang }: langInter) => {
       <span className="flex gap-4">
         <div className="flex items-center">
           <MdOutlineGTranslate className="pe-3 text-[var(--heading-black)] text-3xl" />
-          <span className="text-[var(--gray)]">
-            {t("header.languages")}
-          </span>
+          <span className="text-[var(--gray)]">{t("header.languages")}</span>
         </div>
 
         <button

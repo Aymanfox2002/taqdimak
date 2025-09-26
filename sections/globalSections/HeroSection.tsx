@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import { Container } from '../../components'
+import { Container } from '../../components/index'
 import { Joti_One } from 'next/font/google';
 import Image from 'next/image';
 import hero_about from '../../public/assets/images/hero_about.jpg'

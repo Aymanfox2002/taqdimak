@@ -18,25 +18,27 @@ const DesktopNav = ({ menuItems }: { menuItems: any }) => {
           <li key={index} className="py-6">
             {item.children ? (
               <>
-                <span className="flex items-center cursor-pointer">
+                <Link
+                  className="flex items-center cursor-pointer"
+                  href={item.href}
+                  onMouseEnter={() => setIsHover(true)}
+                  onMouseLeave={() => setIsHover(false)}
+                >
                   {item.label}
                   <IoIosArrowDown
-                    className="ms-2.5 text-xs"
+                    className="ms-2.5 text-xl"
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
                   />
+                </Link>
                   <AnimatePresence mode="wait">
                     {isHover && (
-                      <div
-                        onMouseEnter={() => setIsHover(true)}
-                        onMouseLeave={() => setIsHover(false)}
-                      >
+                      <div>
                         {" "}
                         <MegaMenu menuItems={menuItems} />
                       </div>
                     )}
                   </AnimatePresence>
-                </span>
               </>
             ) : (
               <Link href={item.href}>{item.label}</Link>

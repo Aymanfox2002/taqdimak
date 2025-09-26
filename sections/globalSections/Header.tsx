@@ -16,7 +16,7 @@ import {
   MobileNav,
   DesktopNav,
   LngBtnDesktop,
-} from "../../components";
+} from "../../components/index";
 
 const Header = () => {
   const [menuButton, setMenuButton] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
     },
     {
       label: t("header.nav.services"),
-      href: "/",
+      href: "/services",
       icon: (
         <TbPackages className="pe-3 text-[var(--heading-black)] text-3xl" />
       ),
@@ -59,7 +59,7 @@ const Header = () => {
       icon: (
         <FaCircleInfo className="pe-3 text-[var(--heading-black)] text-3xl" />
       ),
-      href: "/",
+      href: "/contact",
     },
   ];
 

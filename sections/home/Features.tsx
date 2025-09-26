@@ -8,7 +8,7 @@ import i18n from "../../lib/i18n";
 
 const Features = () => {
   const { t } = useTranslation();
-  const list = t("services.list", { returnObjects: true });
+  const list = t("services.features.list", { returnObjects: true });
   const featuresContent = [
     {
       title: list[0].serviceName,
@@ -30,8 +30,8 @@ const Features = () => {
     <SectionBg>
       <Container>
         <TitleSection
-          title={t("services.sectionTitle.title")}
-          desc={t("services.sectionTitle.description")}
+          title={t("services.features.sectionTitle.title")}
+          desc={t("services.features.sectionTitle.description")}
         />
         <div className="block lg:flex">
           {/* primary box */}

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Container } from "../../components";
+import { Container, SocialMediaLinks } from "../../components/index";
 import { IoLogoTumblr } from "react-icons/io";
 import {
   FaFacebookF,
@@ -16,22 +16,22 @@ const Footer = () => {
     {
       name: "Facebook",
       href: "/",
-      icon: FaFacebookF,
+      icon: <FaFacebookF />,
     },
     {
       name: "Twitter",
       href: "/",
-      icon: FaTwitter,
+      icon: <FaTwitter />,
     },
     {
       name: "Instagram",
       href: "/",
-      icon: FaInstagram,
+      icon: <FaInstagram />,
     },
     {
       name: "LinkedIn",
       href: "/",
-      icon: FaLinkedinIn,
+      icon: <FaLinkedinIn />,
     },
   ];
 
@@ -69,22 +69,8 @@ const Footer = () => {
           </ul>
           {/* Social Media */}
           <div className="flex justify-center gap-4 mb-12">
-            {socialLinks.map(({ name, href, icon: Icon }, i) => (
-              <div
-                key={i}
-                className="flex justify-center items-center w-9 h-9 rounded-lg bg-[var(--teal-500)] btn-animation group relative cursor-pointer"
-              >
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={name}
-                  className="text-[var(--teal-900)] group-hover:text-white transition-all duration-400 z-10"
-                >
-                  <Icon size={24} />
-                </a>
-              </div>
+            {socialLinks.map(({ name, href, icon }, i) => (
+             <SocialMediaLinks href={href} icon={icon} label={name} keyIndex={i} />
             ))}
           </div>
         </div>

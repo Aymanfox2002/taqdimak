@@ -20,7 +20,7 @@ export default function Buttons({
   variant = "primary",
   size = "md",
   className = "",
-  type = "button",
+  type,
 }: ButtonProps) {
   const base =
     "inline-flex items-center justify-center font-medium rounded-[12px]";
@@ -45,6 +45,16 @@ export default function Buttons({
  btn-animation
  group
   `;
+
+  if (type) {
+    return (
+      <button onClick={onClick} className={classes} type={type}>
+        <p className="z-2 group-hover:text-white transition-all duration-400">
+          {children}
+        </p>
+      </button>
+    );
+  }
 
   return (
     <Link href={href} onClick={onClick} className={classes} type={type}>

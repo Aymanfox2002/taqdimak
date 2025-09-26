@@ -12,6 +12,8 @@ const LngBtnDesktop = ({ lang, setLang }: langInter) => {
     const newLang = lang === "en" ? "ar" : "en";
     i18n.changeLanguage(newLang);
     setLang(newLang);
+    //reload window
+    window.location.reload();
   };
   return (
     <button type="button" onClick={toggleLanguage} className="hover:scale-120 transition-all duration-300 cursor-pointer">

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Buttons, Container, SectionBg, TitleSection } from "../../components";
+import { Buttons, Container, SectionBg, TitleSection } from "../../components/index";
 import vase from "../../public/assets/images/vase.png";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
@@ -13,7 +13,6 @@ const AboutUsSnippet = () => {
     offset: ["start end", "end start"],
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [-250, -100]);
-  console.log(translateY);
 
   const { t } = useTranslation();
   return (

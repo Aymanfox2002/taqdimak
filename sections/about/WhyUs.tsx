@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Container, SectionBg, TitleSection } from "../../components";
+import { Container, SectionBg, TitleSection } from "../../components/index";
 import {
   FaBolt,
   FaPaintRoller,

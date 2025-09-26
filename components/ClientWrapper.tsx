@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Ubuntu, Alexandria } from "next/font/google";
 import i18n from "../lib/i18n";
 import { Footer, Header } from "../sections";
+import { Toaster } from "@/components/ui/sonner";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -55,6 +56,12 @@ export default function ClientWrapper({
       >
         <Header />
         {children}
+        <Toaster
+          position={i18n.language === "en" ? "bottom-right" : "bottom-left"}
+          richColors
+          expand={true}
+          closeButton
+        />
         <Footer />
       </div>
     </I18nextProvider>

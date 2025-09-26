@@ -131,27 +131,91 @@
         "study": "Computer Science",
         "university": "University of Toronto"
       }
-    ]
-  },
-  "services": {
-    "sectionTitle": {
-      "title": "Browse our set of features",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero"
-    },
-    "list": [
+    ],
+    "testimonials": [
       {
-        "serviceName": "Scholarship Search",
-        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        "text": "Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra.",
+        "user": "Jamie",
+        "email": "user@email.com"
       },
       {
-        "serviceName": "Application Review",
-        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        "text": "Since we started using this platform, our productivity has skyrocketed across every department. Tasks that once took days are now completed in hours, and communication feels smoother and more efficient than ever before. It has truly changed how we collaborate and deliver results.",
+        "user": "Josh",
+        "email": "user@email.com"
       },
       {
-        "serviceName": "CV Optimization",
-        "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.."
+        "text": "Managing projects is now easier than I ever imagined. The clear structure, built-in tracking, and intuitive features make it simple to stay on top of even the most complex workflows. I no longer worry about missing deadlines or losing important updates—it keeps everything perfectly organized.",
+        "user": "Morgan",
+        "email": "user@email.com"
       }
     ],
+    "testimonialsTitle": "What Our Clients Say",
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero",
+      "questions": [
+        {
+          "question": "How do I apply for a scholarship?",
+          "answer": "You can browse available scholarships, choose the one that fits your profile, and follow the step-by-step application process directly on our platform."
+        },
+        {
+          "question": "Can I apply for multiple scholarships at once?",
+          "answer": "Yes, you are encouraged to apply for more than one scholarship as long as you meet the eligibility requirements for each program."
+        },
+        {
+          "question": "Do I need to pay any fees?",
+          "answer": "No, our platform is completely free to use. You can search, apply, and track your scholarship applications without any hidden charges."
+        },
+        {
+          "question": "Will I be notified about the application status?",
+          "answer": "Yes, once you apply, you will receive updates and notifications regarding the progress and results of your scholarship application."
+        }
+      ]
+    }
+  },
+  "services": {
+    "features": {
+      "sectionTitle": {
+        "title": "Our Services",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero"
+      },
+      "list": [
+        {
+          "serviceName": "Scholarship Search",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        },
+        {
+          "serviceName": "Application Review",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        },
+        {
+          "serviceName": "CV Optimization",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.."
+        }
+      ]
+    },
+    "servicesList": {
+      "title": "Our Services",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero",
+      "list": [
+        {
+          "serviceName": "Scholarship Search",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        },
+        {
+          "serviceName": "Application Review",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis."
+        },
+        {
+          "serviceName": "CV Optimization",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.."
+        },
+        {
+          "serviceName": "Scholarship Search",
+          "serviceDescription": "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.."
+        }
+      ]
+    },
     "faqs": [
       {
         "question": "How do I apply for a scholarship?",
@@ -162,12 +226,97 @@
         "answer": "Basic services are free, with premium options available for additional support."
       }
     ],
-    "process": {
-      "step1": "Sign up and create your profile.",
-      "step2": "Browse and shortlist scholarships.",
-      "step3": "Prepare your documents and essays.",
-      "step4": "Submit your applications with our guidance.",
-      "step5": "Receive results and next steps."
+    "howItWorks": {
+      "title": "How It Works",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero",
+      "process": [
+        {
+          "title": "Sign up",
+          "description": "Begin your journey by creating a personal account on our platform. In just a few minutes, you can set up your profile, add your basic details, and prepare your dashboard so that everything is ready for you to explore scholarship opportunities with confidence."
+        },
+        {
+          "title": "Browse Scholarships",
+          "description": "Access a wide range of national and international scholarships that match your field of study, interests, and goals. Our system allows you to filter and shortlist programs easily, ensuring you focus only on the opportunities most relevant to your background and aspirations."
+        },
+        {
+          "title": "Prepare Documents",
+          "description": "Get your CV, recommendation letters, and personal essays ready with clear guidance from our resources. We provide tips to help you organize your materials in a professional way so you can present a strong application package that meets the requirements of top institutions."
+        },
+        {
+          "title": "Submit Applications",
+          "description": "Once your documents are complete, you can submit your scholarship applications directly with the support of our platform. We walk you through each step of the submission process, ensuring accuracy and giving you peace of mind that nothing important is missed."
+        },
+        {
+          "title": "Receive Results",
+          "description": "Stay updated with notifications and timely alerts as soon as decisions are released. Whether you are accepted, waitlisted, or need to reapply, we guide you on the next steps so you always know how to move forward in your academic journey with confidence."
+        }
+      ],
+      "processOrder": ["start", "second", "third", "fourth", "last"]
+    },
+    "successStorie": {
+      "title": "What They Say",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero",
+      "list": [
+        {
+          "title": "Scholarship Winner in Engineering",
+          "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare",
+          "name": "Ahmed Hassan",
+          "position": "Mechanical Engineering Student"
+        },
+        {
+          "title": "Graduate Student in Computer Science",
+          "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare",
+          "name": "Omar Khaled",
+          "position": "Computer Science Graduate Student"
+        },
+        {
+          "title": "Scholarship Achiever in Business Management",
+          "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices scelerisque mi sed interdum lacus tellus in mi orc, netus nisl laoreet phasellus. Pellentesque non nunc placerat mi quis vitae cursus ornare",
+          "name": "Youssef Ali",
+          "position": "Business Management Scholar"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Enter your message"
+    },
+    "send": "Send Message",
+    "errors": {
+      "validation": {
+        "username": {
+          "min": "Username must be at least 2 characters long",
+          "max": "Username cannot exceed 50 characters"
+        },
+        "email": {
+          "invalid": "Please enter a valid email address"
+        },
+        "message": {
+          "min": "Message must be at least 2 characters long",
+          "max": "Message cannot exceed 1000 characters"
+        }
+      },
+      "request": {
+        "success": {
+          "title": "✅ Success",
+          "description": "Your message has been sent."
+        },
+        "fail": {
+          "title": "❌ Error",
+          "description": "Something went wrong. Please try again."
+        }
+      }
     }
   }
 }

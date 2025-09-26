@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroSection, Mission, WhyUs } from "../../sections";
+import { Faqs, HeroSection, Mission, OurClients, WhyUs } from "../../sections";
 
 
 const Page = () => {
@@ -9,6 +9,8 @@ const Page = () => {
       <HeroSection />
       <Mission />
       <WhyUs />
+      <OurClients />
+      <Faqs />
     </main>
   );
 };
