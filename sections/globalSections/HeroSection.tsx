@@ -2,7 +2,6 @@
 import React from "react";
 import { Container } from "../../components/index";
 import { Joti_One, Marhey } from "next/font/google";
-import hero_about from "../../public/assets/images/hero_about.webp";
 import hero_main_shape from "../../public/assets/images/hero_main_shape.png";
 import half_donut from "../../public/assets/images/half-donut-shape.png";
 import twisted_torus from "../../public/assets/images/twisted-torus.png";
@@ -20,7 +19,7 @@ const marhey = Marhey({
   weight: "700",
 });
 
-const HeroSection = ({ header }: { header: string }) => {
+const HeroSection = ({ header, image }: { header: string, image: any }) => {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -33,7 +32,7 @@ const HeroSection = ({ header }: { header: string }) => {
       aria-labelledby="hero-heading"
       className="bg-cover bg-center overflow-x-clip"
       style={{
-        backgroundImage: `url(${hero_about.src})`,
+        backgroundImage: `url(${image.src})`,
         fontFamily: "cursive",
       }}
     >
