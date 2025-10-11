@@ -31,6 +31,7 @@ type SlideItem = {
 };
 
 const ServicesList = () => {
+  //   setup the arrows setting
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   //   setup the custom pagination

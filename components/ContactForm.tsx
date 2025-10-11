@@ -88,7 +88,7 @@ const ContactForm = () => {
           label: "Close",
           onClick: () => console.log("Undo"),
         },
-        className: "bg-green-100"
+        className: "bg-green-100",
       });
       form.reset();
     } catch (error) {
@@ -98,10 +98,9 @@ const ContactForm = () => {
           label: "Close",
           onClick: () => console.log("Undo"),
         },
-        className: "bg-red-900"
+        className: "bg-red-900",
       });
     }
-
   };
   return (
     <div className="max-w-[752px] bg-[var(--teal-300)] p-[73px] rounded-[25px] shadow-2xl relative">
@@ -133,17 +132,18 @@ const ContactForm = () => {
           />
 
           <div className="flex flex-col md:flex-row gap-7 md:gap-0 justify-between items-center mt-12">
-            <Buttons type="submit" size="lg" className="rounded-full w-full md:w-auto">
+            <Buttons
+              type="submit"
+              size="lg"
+              className="rounded-full w-full md:w-auto"
+            >
               {t("contact.send")}
             </Buttons>
             <div className="flex gap-2">
               {socialLinks.map(({ name, href, icon }, i) => (
-                <SocialMediaLinks
-                  href={href}
-                  icon={icon}
-                  label={name}
-                  keyIndex={i}
-                />
+                <div key={i}>
+                  <SocialMediaLinks href={href} icon={icon} label={name} />
+                </div>
               ))}
             </div>
           </div>

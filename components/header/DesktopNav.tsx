@@ -25,20 +25,18 @@ const DesktopNav = ({ menuItems }: { menuItems: any }) => {
                   onMouseLeave={() => setIsHover(false)}
                 >
                   {item.label}
-                  <IoIosArrowDown
-                    className="ms-2.5 text-xl"
-                    onMouseEnter={() => setIsHover(true)}
-                    onMouseLeave={() => setIsHover(false)}
-                  />
+                  <IoIosArrowDown className="ms-2.5 text-xl" />
                 </Link>
-                  <AnimatePresence mode="wait">
-                    {isHover && (
-                      <div>
-                        {" "}
-                        <MegaMenu menuItems={menuItems} />
-                      </div>
-                    )}
-                  </AnimatePresence>
+                <AnimatePresence mode="wait">
+                  {isHover && (
+                    <div
+                      onMouseEnter={() => setIsHover(true)}
+                      onMouseLeave={() => setIsHover(false)}
+                    >
+                      <MegaMenu menuItems={menuItems} />
+                    </div>
+                  )}
+                </AnimatePresence>
               </>
             ) : (
               <Link href={item.href}>{item.label}</Link>

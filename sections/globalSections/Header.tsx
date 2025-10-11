@@ -2,24 +2,16 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoLogoTumblr } from "react-icons/io";
-import { IoMenu } from "react-icons/io5";
 import { HiMiniHome } from "react-icons/hi2";
 import { RiTeamFill } from "react-icons/ri";
 import { TbPackages } from "react-icons/tb";
 import { FaCircleInfo } from "react-icons/fa6";
-import { AnimatePresence } from "framer-motion";
 
-import "../../app/globals.css";
 import i18n from "../../lib/i18n";
 import { useTranslation } from "react-i18next";
-import {
-  MobileNav,
-  DesktopNav,
-  LngBtnDesktop,
-} from "../../components/index";
+import { MobileNav, DesktopNav, LngBtnDesktop } from "../../components/index";
 
 const Header = () => {
-  const [menuButton, setMenuButton] = useState(false);
   const { t } = useTranslation();
 
   const menuItems = [
@@ -29,13 +21,6 @@ const Header = () => {
         <HiMiniHome className="pe-3 text-[var(--heading-black)] text-3xl" />
       ),
       href: "/",
-    },
-    {
-      label: t("header.nav.about"),
-      icon: (
-        <RiTeamFill className="pe-3 text-[var(--heading-black)] text-3xl" />
-      ),
-      href: "/about",
     },
     {
       label: t("header.nav.services"),
@@ -53,6 +38,13 @@ const Header = () => {
         { label: t("header.nav.servicesDropdown.service-7"), href: "/" },
         { label: t("header.nav.servicesDropdown.service-8"), href: "/" },
       ],
+    },
+    {
+      label: t("header.nav.about"),
+      icon: (
+        <RiTeamFill className="pe-3 text-[var(--heading-black)] text-3xl" />
+      ),
+      href: "/about",
     },
     {
       label: t("header.contact"),
@@ -79,13 +71,9 @@ const Header = () => {
           <Link href={"/"}>
             <IoLogoTumblr className="text-3xl text-[var(--teal-900)]" />
           </Link>
-          <button
-            type="button"
-            aria-label="Menu button"
-            onClick={() => setMenuButton((p) => !p)}
-          >
-            <IoMenu className="md:hidden text-3xl text-[var(--heading-black)] hover:cursor-pointer" />
-          </button>
+
+          <MobileNav lang={lang} setLang={setLang} menuItems={menuItems} />
+
           <div className="hidden md:flex items-center">
             <DesktopNav menuItems={menuItems} />
             <span className="border-s border-[var(--gray)] ps-4">
@@ -95,12 +83,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
-      <AnimatePresence mode="popLayout">
-        {menuButton && (
-          <MobileNav lang={lang} setLang={setLang} menuItems={menuItems} />
-        )}
-      </AnimatePresence>
     </header>
   );
 };

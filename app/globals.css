@@ -236,32 +236,13 @@ body {
   background-image: url("../public/assets/images/feat_3.jpeg");
 }
 
-.hero-mask {
-  width: 700px; /* section width */
-  height: 300px; /* section height */
-
-  /* background image inside the mask */
-  background-image: url("../public/assets/images/hero_about.jpg");
-  background-size: cover; /* change background size here */
-  background-position: right; /* change background position here */
-
-  /* mask image */
-  -webkit-mask-image: url("../public/assets/images/industry.svg");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain; /* change mask size here */
-  -webkit-mask-position: center; /* move mask position */ 
-
-  mask-image: url("../public/assets/images/industry.svg");
+.mask-hero{
+  -webkit-mask-image: url(../public/assets/images/vector_hero.svg);
   mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
-
-  /* for visibility */
-  background-color: lightgray;
+  mask-size: 50%;
 }
 
 .contact-bg {
   background-image: url("../public/assets/images/contact_bg.jpg");
   background-size: cover;
 }
-

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import collegeClass from "../../public/assets/images/collegeClass.png";
@@ -18,15 +18,14 @@ const MegaMenu = ({ menuItems }: { menuItems: any }) => {
       exit={{
         x: 100,
         opacity: 0,
-        transition : {
-          delay: 1
-        }
+        transition: {
+          delay: 1,
+        },
       }}
-    
     >
       <div className="flex gap-8">
         <ul className="lg:w-[260px] w-[300px] xl:w-[300px]">
-          {menuItems[2].children.slice(0, 4).map((ele, i: number) => (
+          {menuItems[1].children.slice(0, 4).map((ele, i: number) => (
             <Link
               href={ele.href}
               key={i}
@@ -38,7 +37,7 @@ const MegaMenu = ({ menuItems }: { menuItems: any }) => {
           ))}
         </ul>
         <ul className="lg:w-[260px] w-[300px] xl:w-[300px]">
-          {menuItems[2].children.slice(4).map((ele, i: number) => (
+          {menuItems[1].children.slice(4).map((ele, i: number) => (
             <Link
               href={ele.href}
               key={i}

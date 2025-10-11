@@ -4,13 +4,11 @@ type mediaType = {
   href: string;
   icon: any;
   label: string;
-  keyIndex: number;
 };
 
-const SocialMediaLinks = ({ href, icon, label, keyIndex }: mediaType) => {
+const SocialMediaLinks = ({ href, icon, label }: mediaType) => {
   return (
-    <div
-      key={keyIndex}
+    <span
       className="flex justify-center items-center w-9 h-9 rounded-lg bg-[var(--teal-500)] btn-animation group relative cursor-pointer"
     >
       <a
@@ -22,7 +20,7 @@ const SocialMediaLinks = ({ href, icon, label, keyIndex }: mediaType) => {
       >
         {icon}
       </a>
-    </div>
+    </span>
   );
 };
 

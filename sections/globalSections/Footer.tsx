@@ -42,15 +42,15 @@ const Footer = () => {
     },
     {
       name: t("footer.links.about"),
-      href: "/",
+      href: "/about",
     },
     {
       name: t("footer.links.services"),
-      href: "/",
+      href: "/services",
     },
     {
       name: t("footer.links.contact"),
-      href: "/",
+      href: "/contact",
     },
   ];
   return (
@@ -68,11 +68,13 @@ const Footer = () => {
             ))}
           </ul>
           {/* Social Media */}
-          <div className="flex justify-center gap-4 mb-12">
+          <ul className="flex justify-center gap-4 mb-12">
             {socialLinks.map(({ name, href, icon }, i) => (
-             <SocialMediaLinks href={href} icon={icon} label={name} keyIndex={i} />
+             <li key={i}>
+              <SocialMediaLinks href={href} icon={icon} label={name} />
+             </li>
             ))}
-          </div>
+          </ul>
         </div>
         <div className="w-full h-[2px] bg-[var(--teal-300)] mb-8" />
         <p className="text-center text-[var(--gray)] mb-5" dir="ltr">

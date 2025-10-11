@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html >
+    <html suppressHydrationWarning={true}>
       <body className="bg-[var(--teal-100-bg)]">
         <ClientWrapper>{children}</ClientWrapper>
       </body>

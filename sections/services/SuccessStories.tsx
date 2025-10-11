@@ -1,11 +1,12 @@
 "use client";
 import {
+  BulletsPagination,
   Container,
   SectionBg,
-  StoriesPagination,
+  StoriesNavigation,
   TitleSection,
 } from "../../components/index";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../lib/i18n";
 import what_they_say_1 from "../../public/assets/images/what_they_say_1.webp";
@@ -19,12 +20,13 @@ import "swiper/css/pagination";
 import Image from "next/image";
 
 const SuccessStories = () => {
-  const prevDesktopRef = useRef<HTMLButtonElement>(null);
-  const nextDesktopRef = useRef<HTMLButtonElement>(null);
-  const prevMobileRef = useRef<HTMLButtonElement>(null);
-  const nextMobileRef = useRef<HTMLButtonElement>(null);
+  // setup the custom arrows
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
-  const swiperRef = useRef(null);
+  // setup the custom paginations
+  const [mainSwiper, setMainSwiper] = useState<any>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const { t } = useTranslation();
   const successStoriesData = t("services.successStorie.list", {
@@ -37,6 +39,7 @@ const SuccessStories = () => {
     name: item.name,
     position: item.position,
   }));
+
   return (
     <SectionBg>
       <Container>
@@ -50,10 +53,7 @@ const SuccessStories = () => {
             />
           </div>
           <div className="flex-1 hidden md:block justify-end items-end lg:flex">
-            <StoriesPagination
-              prevRef={prevDesktopRef}
-              nextRef={nextDesktopRef}
-            />
+            <StoriesNavigation prevRef={prevRef} nextRef={nextRef} />
           </div>
         </div>
         <div>
@@ -61,16 +61,11 @@ const SuccessStories = () => {
             key={i18n.language}
             modules={[Navigation]}
             navigation={{
-              nextEl: nextDesktopRef.current || nextMobileRef.current,
-              prevEl: prevDesktopRef.current || prevMobileRef.current,
+              nextEl: nextRef.current,
+              prevEl: prevRef.current,
             }}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onBeforeInit={(swiper: any) => {
-              swiper.params.navigation.prevEl =
-                prevDesktopRef.current || prevMobileRef.current;
-              swiper.params.navigation.nextEl =
-                nextDesktopRef.current || nextMobileRef.current;
-            }}
+            onSwiper={setMainSwiper}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
@@ -81,8 +76,8 @@ const SuccessStories = () => {
             className="mb-8"
           >
             {successStoriesArr.map((item, i) => (
-              <SwiperSlide key={i} className="">
-                <div className="ms-auto me-auto m-10 flex flex-col lg:flex-row shadow-xl overflow-clip rounded-3xl bg-[var(--teal-100)] max-w-[382px] lg:max-w-none">
+              <SwiperSlide key={i}>
+                <div className="lg:flex cursor-grab ms-auto me-auto m-10  flex-col lg:flex-row shadow-xl overflow-clip rounded-3xl bg-[var(--teal-100)] max-w-[382px] lg:max-w-none">
                   <div className="h-[382px] lg:h-auto overflow-clip mb-12 lg:mb-0 relative lg:basis-3/8 border min-w-5">
                     <Image
                       src={item.image}
@@ -105,16 +100,18 @@ const SuccessStories = () => {
                       <i>'{item.position}'</i>
                     </p>
                   </div>
-                </div> 
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* Custom Pagination */} 
-          <StoriesPagination
-            prevRef={prevMobileRef}
-            nextRef={nextMobileRef}
-            className={"lg:hidden"}
-          />
+          {/* Custom Pagination */}
+          <div className="md:hidden">
+            <BulletsPagination
+              slidesData={successStoriesArr}
+              mainSwiper={mainSwiper}
+              activeIndex={activeIndex}
+            />
+          </div>
         </div>
       </Container>
     </SectionBg>
