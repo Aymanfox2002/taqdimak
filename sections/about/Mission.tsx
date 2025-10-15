@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { Buttons, Container, TitleSection } from "../../components/index";
-import mission_aboutPage from '../../public/assets/images/mission_aboutPage.jpg'
+import mission_aboutPage from '../../public/assets/images/mission_aboutPage.webp'
 import { useTranslation } from "react-i18next";
 
 const Mission = () => {

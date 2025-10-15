@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import collegeClass from "../../public/assets/images/collegeClass.png";
+import collegeClass from "../../public/assets/images/collegeClass.webp";
 import { motion } from "framer-motion";
 const MegaMenu = ({ menuItems }: { menuItems: any }) => {
   return (

@@ -5,9 +5,9 @@ import {
   Container,
   TitleSection,
 } from "../../components/index";
-import service_image_1 from "../../public/assets/images/service_image_1.jpg";
-import service_image_2 from "../../public/assets/images/service_image_2.jpg";
-import service_image_3 from "../../public/assets/images/service_image_3.jpg";
+import service_image_1 from "../../public/assets/images/service_image_1.webp";
+import service_image_2 from "../../public/assets/images/service_image_2.webp";
+import service_image_3 from "../../public/assets/images/service_image_3.webp";
 
 import { HiArrowLeft } from "react-icons/hi";
 import { HiArrowRight } from "react-icons/hi";

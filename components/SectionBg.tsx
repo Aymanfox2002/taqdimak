@@ -1,6 +1,6 @@
 `use client`;
 import React from "react";
-import section_bg from "../public/assets/images/section_bg.jpg";
+import section_bg from "../public/assets/images/section_bg.webp";
 
 const SectionBg = ({ children, refVal }: { children: React.ReactNode, refVal?: any }) => {
   return (

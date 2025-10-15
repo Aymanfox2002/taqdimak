@@ -6,7 +6,7 @@ import {
   SectionBg,
   TitleSection,
 } from "../../components/index";
-import vase from "../../public/assets/images/vase.png";
+import vase from "../../public/assets/images/vase.webp";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -23,7 +23,7 @@ const AboutUsSnippet = () => {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const translateY = useTransform(scrollYProgress, [0, 1], [-250, -100]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -350]);
 
 
   return (
@@ -37,7 +37,7 @@ const AboutUsSnippet = () => {
                 top: "50%",
                 left: "50%",
                 translateX: "-50%",
-                translateY, // Animate here
+                translateY,
                 width: "85%",
               }}
             >

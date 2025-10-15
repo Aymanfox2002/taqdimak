@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../lib/i18n";
 import { Joti_One, Marhey } from "next/font/google";
 import { Buttons, Container } from "../../components/index";
-import heroImageHomePage from "../../public/assets/images/heroImageHomePage.png";
+import heroImageHomePage from "../../public/assets/images/heroImageHomePage.webp";
 import blob_1 from "../../public/assets/images/blob_1.svg";
 import blob_2 from "../../public/assets/images/blob_2.svg";
 

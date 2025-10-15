@@ -8,6 +8,7 @@ import { Controller, Autoplay } from "swiper/modules";
 import av_7 from "../../public/assets/images/avatar-7.png";
 import av_8 from "../../public/assets/images/avatar-8.png";
 import av_9 from "../../public/assets/images/avatar-9.png";
+//@ts-ignore
 import "swiper/css";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";

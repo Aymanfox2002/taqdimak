@@ -4,6 +4,7 @@ import { Faqs, HeroSection, Process, ServicesList, SuccessStories } from "../../
 import i18n from "@/lib/i18n";
 import servicesImage from "../../public/assets/images/hero_section_services.webp"
 
+
 const Page = () => {
   return (
     <main>

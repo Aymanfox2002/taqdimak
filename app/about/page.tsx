@@ -3,6 +3,7 @@ import React from "react";
 import { Faqs, HeroSection, Mission, OurClients, WhyUs } from "../../sections";
 import i18n from "@/lib/i18n";
 import contactImage from "../../public/assets/images/hero_section_about.webp";
+import SectionDivider from "../../components/SectionDivider";
 
 const Page = () => {
   return (
@@ -11,6 +12,7 @@ const Page = () => {
         header={i18n.language === "en" ? "About Us" : "من نحن"}
         image={contactImage}
       />
+      {/* <SectionDivider /> */}
       <Mission />
       <WhyUs />
       <OurClients />

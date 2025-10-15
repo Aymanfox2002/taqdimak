@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Container } from "../../components/index";
+import { Container, SectionDivider } from "../../components/index";
 import { Joti_One, Marhey } from "next/font/google";
-import hero_main_shape from "../../public/assets/images/hero_main_shape.png";
-import half_donut from "../../public/assets/images/half-donut-shape.png";
-import twisted_torus from "../../public/assets/images/twisted-torus.png";
+import hero_main_shape from "../../public/assets/images/hero_main_shape.webp";
+import half_donut from "../../public/assets/images/half-donut-shape.webp";
+import twisted_torus from "../../public/assets/images/twisted-torus.webp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import i18n from "@/lib/i18n";
@@ -30,7 +30,7 @@ const HeroSection = ({ header, image }: { header: string, image: any }) => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="bg-cover bg-center overflow-x-clip"
+      className="bg-cover bg-center overflow-x-clip relative"
       style={{
         backgroundImage: `url(${image.src})`,
         fontFamily: "cursive",
@@ -100,6 +100,7 @@ const HeroSection = ({ header, image }: { header: string, image: any }) => {
           </div>
         </Container>
       </div>
+      <SectionDivider />
     </section>
   );
 };

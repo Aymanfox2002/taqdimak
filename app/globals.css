@@ -227,17 +227,17 @@ body {
   background-position: center;
 }
 .feat_0_Bg {
-  background-image: url("../public/assets/images/feat_1.jpg");
+  background-image: url("../public/assets/images/feat_1.webp");
 }
 .feat_1_Bg {
-  background-image: url("../public/assets/images/feat_2.jpeg");
+  background-image: url("../public/assets/images/feat_2.webp");
 }
 .feat_2_Bg {
-  background-image: url("../public/assets/images/feat_3.jpeg");
+  background-image: url("../public/assets/images/feat_3.webp");
 }
 
 
 .contact-bg {
-  background-image: url("../public/assets/images/contact_bg.jpg");
+  background-image: url("../public/assets/images/contact_bg.webp");
   background-size: cover;
 }
