@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const Faqs = () => {
   const { t } = useTranslation();
-  const faqData = t("about.faqs.questions", { returnObjects: true });
+  const faqData = t("about.faqs.questions", { returnObjects: true }) as Array<{ question: string; answer: string }>;
   return (
     <section className="p-tb">
       <Container>
