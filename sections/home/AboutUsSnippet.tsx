@@ -1,12 +1,23 @@
 "use client";
 import Image from "next/image";
-import { Buttons, Container, SectionBg, TitleSection } from "../../components/index";
+import {
+  Buttons,
+  Container,
+  SectionBg,
+  TitleSection,
+} from "../../components/index";
 import vase from "../../public/assets/images/vase.png";
 import { useTranslation } from "react-i18next";
-import { useRef } from "react";
-import { useScroll, useTransform ,motion} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const AboutUsSnippet = () => {
+  const [mount, setMount] = useState(false);
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
+  const { t } = useTranslation(); 
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -14,13 +25,13 @@ const AboutUsSnippet = () => {
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [-250, -100]);
 
-  const { t } = useTranslation();
+
   return (
     <SectionBg refVal={sectionRef}>
       <Container className="flex flex-col-reverse lg:flex-row">
         <div className="flex-1 flex justify-center items-center p-2">
           <div className="w-[80vw] max-w-[450px] h-[80vw] max-h-[450px] rounded-full bg-linear-to-l from-[#D9D9D9] to-[#737373] relative overflow-clip ">
-               <motion.div
+            <motion.div
               style={{
                 position: "absolute",
                 top: "50%",
@@ -37,7 +48,7 @@ const AboutUsSnippet = () => {
               />
             </motion.div>
           </div>
-          </div>
+        </div>
         <div className="flex-1 flex flex-col justify-center">
           <TitleSection
             title={t("home.aboutSnippet.title")}

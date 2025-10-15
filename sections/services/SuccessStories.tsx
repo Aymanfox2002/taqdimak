@@ -14,8 +14,11 @@ import what_they_say_2 from "../../public/assets/images/what_they_say_2.webp";
 import what_they_say_3 from "../../public/assets/images/what_they_say_3.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+// @ts-ignore
 import "swiper/css";
+// @ts-ignore
 import "swiper/css/navigation";
+// @ts-ignore
 import "swiper/css/pagination";
 import Image from "next/image";
 
@@ -29,9 +32,11 @@ const SuccessStories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const { t } = useTranslation();
+
   const successStoriesData = t("services.successStorie.list", {
     returnObjects: true,
-  });
+  }) as any;
+
   const successStoriesArr = successStoriesData.map((item, i) => ({
     image: [what_they_say_1, what_they_say_2, what_they_say_3][i % 3],
     title: item.title,

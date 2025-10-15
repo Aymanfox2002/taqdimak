@@ -236,11 +236,6 @@ body {
   background-image: url("../public/assets/images/feat_3.jpeg");
 }
 
-.mask-hero{
-  -webkit-mask-image: url(../public/assets/images/vector_hero.svg);
-  mask-repeat: no-repeat;
-  mask-size: 50%;
-}
 
 .contact-bg {
   background-image: url("../public/assets/images/contact_bg.jpg");

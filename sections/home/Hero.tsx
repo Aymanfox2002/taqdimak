@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../lib/i18n";
 import { Joti_One, Marhey } from "next/font/google";
@@ -9,23 +9,30 @@ import heroImageHomePage from "../../public/assets/images/heroImageHomePage.png"
 import blob_1 from "../../public/assets/images/blob_1.svg";
 import blob_2 from "../../public/assets/images/blob_2.svg";
 
-const jotiOne = Joti_One({
-  subsets: ["latin"],
-  weight: "400",
-});
+const joti_one = Joti_One({ subsets: ["latin"], weight: "400" });
+const marhey = Marhey({ subsets: ["arabic"], weight: "700" });
 
-const marhey = Marhey({
-  subsets: ["arabic"],
-  weight: "700",
-});
+const fonts = {
+  en: joti_one,
+  ar: marhey,
+};
 
 const Hero = () => {
+  // to avoid hydration mismatch
+  const [mount, setMount] = useState(false);
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
   const { t } = useTranslation();
+  const currentLng = mount && i18n.language === "en" ? fonts.en : fonts.ar;
+
+  if (!mount) return null;
   return (
     <div className="relative pt-[76px] overflow-x-clip py-20 z-0">
       <div
         className={`${
-          i18n.language === "en"
+          mount && i18n.language === "en"
             ? "lg:-top-[650px] lg:-right-[400px] lg:w-[1100px]"
             : "lg:-top-[650px] lg:right-[550px] xl:right-[950px] lg:w-[1100px]"
         } -right-[100px] w-[900px] md:w-[1200px] absolute -z-1 -top-[208px] md:-top-[300px]`}
@@ -34,7 +41,9 @@ const Hero = () => {
       </div>
       <div
         className={`hidden lg:block absolute -z-1  ${
-          i18n.language === "en" ? "-left-[170px]" : "rotate-180 -right-[170px]"
+          mount && i18n.language === "en"
+            ? "-left-[170px]"
+            : "rotate-180 -right-[170px]"
         }`}
       >
         <Image src={blob_2} alt={"Decoration image"} className="w-full " />
@@ -43,7 +52,7 @@ const Hero = () => {
         <div className="text-center lg:w-[478px] lg:text-start  items-center">
           <h1
             className={`${
-              i18n.language === "en" ? jotiOne.className : marhey.className
+              currentLng?.className || ""
             } text-[36px] text-base/13 tracking-tight gradient-heading`}
           >
             {t("home.hero.mainTitle")}

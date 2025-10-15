@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, SectionBg, TitleSection } from "../../components/index";
 import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -8,6 +8,11 @@ import i18n from "../../lib/i18n";
 
 const Features = () => {
   const { t } = useTranslation();
+  const [mount, setMount] = useState(false);
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
   const list = t("services.features.list", { returnObjects: true });
   const featuresContent = [
     {
@@ -51,10 +56,14 @@ const Features = () => {
                   href={featuresContent[0].href}
                   className="text-sm md:text-lg flex items-center justify-center gap-2"
                 >
-                  {i18n.language === "en" ? "Learn more" : "اطلع على المزيد"}
+                  {mount && i18n.language === "en"
+                    ? "Learn more"
+                    : "اطلع على المزيد"}
                   <span>
                     <FaLongArrowAltRight
-                      className={`${i18n.language === "ar" && "rotate-180"} `}
+                      className={`${
+                        mount && i18n.language === "ar" && "rotate-180"
+                      } `}
                     />
                   </span>
                 </Link>
@@ -82,13 +91,13 @@ const Features = () => {
                       href={ele.href}
                       className="text-sm  md:text-lg flex items-center justify-center md:justify-start gap-2"
                     >
-                      {i18n.language === "en"
+                      {mount && i18n.language === "en"
                         ? "Learn more"
                         : "اطلع على المزيد"}
                       <span>
                         <FaLongArrowAltRight
                           className={`${
-                            i18n.language === "ar" && "rotate-180"
+                            mount && i18n.language === "ar" && "rotate-180"
                           } `}
                         />
                       </span>
