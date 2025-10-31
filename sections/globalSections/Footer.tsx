@@ -2,57 +2,14 @@
 import Link from "next/link";
 import { Container, SocialMediaLinks } from "../../components/index";
 import { IoLogoTumblr } from "react-icons/io";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { socialLinks } from "@/data/SocialLinks";
+import { getMenuItems } from "@/data/menuItems";
 
 const Footer = () => {
   const { t } = useTranslation();
-  const socialLinks = [
-    {
-      name: "Facebook",
-      href: "/",
-      icon: <FaFacebookF />,
-    },
-    {
-      name: "Twitter",
-      href: "/",
-      icon: <FaTwitter />,
-    },
-    {
-      name: "Instagram",
-      href: "/",
-      icon: <FaInstagram />,
-    },
-    {
-      name: "LinkedIn",
-      href: "/",
-      icon: <FaLinkedinIn />,
-    },
-  ];
+  const links = getMenuItems(t);
 
-  const links = [
-    {
-      name: t("footer.links.home"),
-      href: "/",
-    },
-    {
-      name: t("footer.links.about"),
-      href: "/about",
-    },
-    {
-      name: t("footer.links.services"),
-      href: "/services",
-    },
-    {
-      name: t("footer.links.contact"),
-      href: "/contact",
-    },
-  ];
   return (
     <footer className="pb-3">
       <Container>
@@ -61,18 +18,18 @@ const Footer = () => {
             <IoLogoTumblr className="text-[57px] text-[var(--teal-900)]" />
           </div>
           <ul className="flex flex-col gap-4 items-center md:flex-row text-[var(--gray)] mb-8">
-            {links.map(({ name, href }, i) => (
+            {links.map(({ label, href }, i) => (
               <li key={i}>
-                <Link href={href}>{name}</Link>
+                <Link href={href}>{label}</Link>
               </li>
             ))}
           </ul>
           {/* Social Media */}
           <ul className="flex justify-center gap-4 mb-12">
             {socialLinks.map(({ name, href, icon }, i) => (
-             <li key={i}>
-              <SocialMediaLinks href={href} icon={icon} label={name} />
-             </li>
+              <li key={i}>
+                <SocialMediaLinks href={href} icon={icon} label={name} />
+              </li>
             ))}
           </ul>
         </div>

@@ -1,61 +1,42 @@
 "use client";
-import React, { useRef, useState } from "react";
 import {
   BulletsPagination,
   Container,
+  ServicesSlideCard,
   TitleSection,
 } from "../../components/index";
-import service_image_1 from "../../public/assets/images/service_image_1.webp";
-import service_image_2 from "../../public/assets/images/service_image_2.webp";
-import service_image_3 from "../../public/assets/images/service_image_3.webp";
-
-import { HiArrowLeft } from "react-icons/hi";
-import { HiArrowRight } from "react-icons/hi";
-
+import { servicesData } from "@/data/servicesData";
+import useServicesSwiperArrows from "@/hooks/useServicesSwiperArrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+//@ts-ignore
 import "swiper/css";
+//@ts-ignore
 import "swiper/css/navigation";
+//@ts-ignore
 import "swiper/css/pagination";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
-
 import { useTranslation } from "react-i18next";
 import i18n from "@/lib/i18n";
+import { useEffect, useState } from "react";
+import ServicesNavigationArrows from "@/components/ServicesNavigationArrows";
+import useMounted from "@/hooks/useMounted";
 
-type SlideItem = {
-  image: any;
-  title: string;
-  description: string;
-  link: string;
-};
 
 const ServicesList = () => {
-  //   setup the arrows setting
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-  //   setup the custom pagination
-  const [mainSwiper, setMainSwiper] = useState<any>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  type ServiceTranslation = {
-    serviceName: string;
-    serviceDescription: string;
-  };
-
   const { t } = useTranslation();
-  const servicesData = t("services.servicesList.list", {
-    returnObjects: true,
-  }) as ServiceTranslation[];
+  const slidesData = servicesData();
+  const {
+    prevRef,
+    nextRef,
+    mainSwiper,
+    setMainSwiper,
+    activeIndex,
+    setActiveIndex,
+  } = useServicesSwiperArrows();
 
-  const slidesData: SlideItem[] = servicesData.map((item, i) => ({
-    image: [service_image_1, service_image_2, service_image_3, service_image_1][
-      i % 4
-    ],
-    title: item.serviceName,
-    description: item.serviceDescription,
-    link: "#",
-  }));
+  // use the custom hook to check if mounted
+  const mounted = useMounted();
+  if (!mounted) return null;
 
   return (
     <section>
@@ -85,64 +66,20 @@ const ServicesList = () => {
           >
             {slidesData.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="p-[22px] ms-auto me-auto max-w-[360px] rounded-3xl flex flex-col border border-[var(--teal-500)]">
-                  <div className="w-full h-[191px] rounded-[10px] overflow-clip relative mb-6">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      fill
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-5 gradient-text">
-                    {slide.title}
-                  </h3>
-                  <p className="text-[var(--gray)] line-clamp-4 leading-8 text-justify">
-                    {slide.description}
-                  </p>
-                  <a
-                    href={slide.link}
-                    className="mt-9 inline-flex items-center text-[var(--heading-black)] font-medium hover:underline"
-                  >
-                    Learn More
-                    {i18n.language === "en" ? (
-                      <ArrowRight className="ms-2 w-4 h-4 text-[var(--gray)]" />
-                    ) : (
-                      <ArrowLeft className="ms-2 w-4 h-4 text-[var(--gray)]" />
-                    )}
-                  </a>
-                </div>
+                <ServicesSlideCard slide={slide} />
               </SwiperSlide>
             ))}
           </Swiper>
           {/* Custom Navigation Arrows */}
-          <>
-            <div className="hidden md:block absolute -left-10 top-[50%] text-[var(--gray)] text-[52px]">
-              <button
-                className="cursor-pointer"
-                ref={i18n.language === "en" ? prevRef : nextRef}
-              >
-                <HiArrowLeft />
-              </button>
-            </div>
-            <div className="hidden md:block absolute -right-10 top-[50%] text-[var(--gray)] text-[52px]">
-              <button
-                className="cursor-pointer"
-                ref={i18n.language === "en" ? nextRef : prevRef}
-              >
-                <HiArrowRight />
-              </button>
-            </div>
-          </>
+          <ServicesNavigationArrows prevRef={prevRef} nextRef={nextRef} />
+
           {/* Custom Pagination */}
-          <div className="md:hidden">
-            <BulletsPagination
-              slidesData={slidesData}
-              mainSwiper={mainSwiper}
-              activeIndex={activeIndex}
-            />
-          </div>
+          <BulletsPagination
+            slidesData={slidesData}
+            mainSwiper={mainSwiper}
+            activeIndex={activeIndex}
+            classname={"md:hidden"}
+          />
         </div>
       </Container>
     </section>

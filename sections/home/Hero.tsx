@@ -7,7 +7,7 @@ import { Joti_One, Marhey } from "next/font/google";
 import { Buttons, Container } from "../../components/index";
 import heroImageHomePage from "../../public/assets/images/heroImageHomePage.webp";
 import blob_1 from "../../public/assets/images/blob_1.svg";
-import blob_2 from "../../public/assets/images/blob_2.svg";
+import useMounted from "@/hooks/useMounted";
 
 const joti_one = Joti_One({ subsets: ["latin"], weight: "400" });
 const marhey = Marhey({ subsets: ["arabic"], weight: "700" });
@@ -18,35 +18,26 @@ const fonts = {
 };
 
 const Hero = () => {
-  // to avoid hydration mismatch
-  const [mount, setMount] = useState(false);
-  useEffect(() => {
-    setMount(true);
-  }, []);
-
+  // use the custom hook to check if mounted
+  const mounted = useMounted();
+  
   const { t } = useTranslation();
-  const currentLng = mount && i18n.language === "en" ? fonts.en : fonts.ar;
+  
 
-  if (!mount) return null;
+  const isEn = i18n.language === "en";
+  const currentLng = isEn ? fonts.en : fonts.ar;
+
+  if (!mounted) return null;
   return (
     <div className="relative pt-[76px] overflow-x-clip py-20 z-0">
       <div
         className={`${
-          mount && i18n.language === "en"
+          isEn
             ? "lg:-top-[650px] lg:-right-[400px] lg:w-[1100px]"
             : "lg:-top-[650px] lg:right-[550px] xl:right-[950px] lg:w-[1100px]"
         } -right-[100px] w-[900px] md:w-[1200px] absolute -z-1 -top-[208px] md:-top-[300px]`}
       >
         <Image src={blob_1} alt={"Decoration image"} className="w-full" />
-      </div>
-      <div
-        className={`hidden lg:block absolute -z-1  ${
-          mount && i18n.language === "en"
-            ? "-left-[170px]"
-            : "rotate-180 -right-[170px]"
-        }`}
-      >
-        <Image src={blob_2} alt={"Decoration image"} className="w-full " />
       </div>
       <Container className="lg:flex">
         <div className="text-center lg:w-[478px] lg:text-start  items-center">

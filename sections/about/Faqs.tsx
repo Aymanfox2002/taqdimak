@@ -1,17 +1,19 @@
 "use client";
-import { Container, TitleSection } from "../../components/index";
+import { Container, FaqItem, TitleSection } from "../../components/index";
 import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
+
+type faqType = {
+  question: string;
+  answer: string;
+};
 
 const Faqs = () => {
   const { t } = useTranslation();
-  const faqData = t("about.faqs.questions", { returnObjects: true }) as Array<{ question: string; answer: string }>;
+  const faqData = t("about.faqs.questions", {
+    returnObjects: true,
+  }) as faqType[];
   return (
     <section className="p-tb">
       <Container>
@@ -22,18 +24,7 @@ const Faqs = () => {
         <div>
           <Accordion type="single" collapsible defaultValue={`item-1`}>
             {faqData.map((ele: any, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i + 1}`}
-                className="bg-[var(--default)] max-w-[1129px] ms-auto me-auto mb-6 rounded-2xl lg:px-16 px-5 accordion-border"
-              >
-                <AccordionTrigger className="lg:text-2xl text-lg cursor-pointer text-[var(--heading-black)] [&>svg]:h-6 [&>svg]:w-6 [&>svg]:text-[var(--gray)]">
-                  {ele.question}
-                </AccordionTrigger>
-                <AccordionContent className="lg:text-lg text-sm leading-8 text-[var(--gray)]">
-                  {ele.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <FaqItem key={i} i={i} ele={ele} />
             ))}
           </Accordion>
         </div>
@@ -41,5 +32,4 @@ const Faqs = () => {
     </section>
   );
 };
-
 export default Faqs;

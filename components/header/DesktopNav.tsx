@@ -4,12 +4,10 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { MegaMenu, Buttons } from "../index";
-
-import { AnimatePresence } from "framer-motion";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const DesktopNav = ({ menuItems }: { menuItems: any }) => {
   const { t } = useTranslation();
-  const [isHover, setIsHover] = useState(false);
 
   return (
     <nav className="hidden md:flex items-center">
@@ -18,25 +16,18 @@ const DesktopNav = ({ menuItems }: { menuItems: any }) => {
           <li key={index} className="py-6">
             {item.children ? (
               <>
-                <Link
-                  className="flex items-center cursor-pointer"
-                  href={item.href}
-                  onMouseEnter={() => setIsHover(true)}
-                  onMouseLeave={() => setIsHover(false)}
-                >
-                  {item.label}
-                  <IoIosArrowDown className="ms-2.5 text-xl" />
-                </Link>
-                <AnimatePresence mode="wait">
-                  {isHover && (
-                    <div
-                      onMouseEnter={() => setIsHover(true)}
-                      onMouseLeave={() => setIsHover(false)}
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Link
+                      className="flex items-center cursor-pointer"
+                      href={item.href}
                     >
-                      <MegaMenu menuItems={menuItems} />
-                    </div>
-                  )}
-                </AnimatePresence>
+                      {item.label}
+                      <IoIosArrowDown className="ms-2.5 text-xl" />
+                    </Link>
+                  </HoverCardTrigger>
+                    <MegaMenu menuItems={menuItems} />
+                </HoverCard>
               </>
             ) : (
               <Link href={item.href}>{item.label}</Link>

@@ -57,7 +57,7 @@ export default function Buttons({
   }
 
   return (
-    <Link href={href} onClick={onClick} className={classes} type={type}>
+    <Link href={href} className={classes} type={type}>
       <p className="z-2 group-hover:text-white transition-all duration-400">
         {children}
       </p>

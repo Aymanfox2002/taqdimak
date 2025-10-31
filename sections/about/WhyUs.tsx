@@ -1,32 +1,16 @@
 "use client";
 import React from "react";
-import { Container, SectionBg, TitleSection } from "../../components/index";
 import {
-  FaBolt,
-  FaPaintRoller,
-  FaThumbsUp,
-} from "react-icons/fa6";
+  Container,
+  SectionBg,
+  TitleSection,
+  WhyUsItems,
+} from "@/components/index";
 import { useTranslation } from "react-i18next";
+import whyUsData from "@/data/whyUsData";
 const WhyUs = () => {
-    const { t } = useTranslation();
-  const reasons = [
-    {
-      icon: <FaBolt size={80} className="text-white" />,
-      title: t("about.whyUs.performance.title"),
-      description:
-        t("about.whyUs.performance.desc"),
-    },
-    {
-      icon: <FaPaintRoller size={80} className="text-white" />,
-      title: t("about.whyUs.Design.title"),
-      description: t("about.whyUs.Design.desc"),
-    },
-    {
-      icon: <FaThumbsUp size={80} className="text-white" />,
-      title: t("about.whyUs.ux.title"),
-      description: t("about.whyUs.ux.desc"),
-    },
-  ];
+  const { t } = useTranslation();
+  const reasons = whyUsData(t);
   return (
     <section>
       <SectionBg>
@@ -38,21 +22,7 @@ const WhyUs = () => {
 
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center md:items-stretch p-6">
             {reasons.map((feature, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center p-6 w-full md:w-1/3"
-              >
-                {/* Circle with Icon */}
-                <div className="w-[160px] h-[160px] flex items-center justify-center rounded-full bg-gradient-to-br from-[#003F40] to-[#00A3A6] mb-4">
-                  {feature.icon}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-3xl text-[var(--heading-black)] font-semibold mb-5">{feature.title}</h3>
-
-                {/* Description */}
-                <p className="text-[var(--gray)] text-sm">{feature.description}</p>
-              </div>
+              <WhyUsItems key={index} index={index} feature={feature} />
             ))}
           </div>
         </Container>

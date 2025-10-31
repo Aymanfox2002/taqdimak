@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import { AboutUsSnippet, FormSection, HeroSection } from "../../sections";
-import i18n from "@/lib/i18n";
 import contactImage from "../../public/assets/images/hero_section_contact.webp"
+import { useTranslation } from "react-i18next";
 
 const page = () => {
+  const { t } = useTranslation();
   return (
     <main>
       <HeroSection
-        header={i18n.language === "en" ? "Contact Us" : "تواصل معنا"} image={contactImage}
+        header={t("contact.header")} image={contactImage}
       />
       <FormSection />
       <AboutUsSnippet />

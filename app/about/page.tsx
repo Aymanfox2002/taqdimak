@@ -1,18 +1,17 @@
 "use client";
 import React from "react";
 import { Faqs, HeroSection, Mission, OurClients, WhyUs } from "../../sections";
-import i18n from "@/lib/i18n";
+import { useTranslation } from "react-i18next";
 import contactImage from "../../public/assets/images/hero_section_about.webp";
-import SectionDivider from "../../components/SectionDivider";
 
 const Page = () => {
+const { t } = useTranslation();
   return (
     <main>
       <HeroSection
-        header={i18n.language === "en" ? "About Us" : "من نحن"}
+        header={t("about.header")}
         image={contactImage}
       />
-      {/* <SectionDivider /> */}
       <Mission />
       <WhyUs />
       <OurClients />

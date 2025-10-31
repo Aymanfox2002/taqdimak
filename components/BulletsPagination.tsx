@@ -1,8 +1,13 @@
 import React from "react";
 
-const BulletsPagination = ({ slidesData, mainSwiper, activeIndex }) => {
+const BulletsPagination = ({
+  slidesData,
+  mainSwiper,
+  activeIndex,
+  classname = "",
+}) => {
   return (
-    <div className="flex items-center justify-center gap-[9px]">
+    <div className={`flex items-center justify-center gap-[9px] ${classname}`}>
       {slidesData.map((slide, index) => (
         <div
           onClick={() => mainSwiper?.slideTo(index)}

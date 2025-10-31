@@ -97,6 +97,7 @@
     }
   },
   "about": {
+    "header":"About Us",
     "missionTitle": "Mission & Vissions",
     "missionVision": "Our mission is to make global education accessible to all by providing up-to-date scholarship information and personalized guidance. We envision a world where every student can pursue their academic goals without financial barriers.",
     "contactBtn": "Contact us",
@@ -174,6 +175,8 @@
     }
   },
   "services": {
+    "header":"Services",
+    "showMore": "Learn more",
     "features": {
       "sectionTitle": {
         "title": "Our Services",
@@ -279,6 +282,7 @@
     }
   },
   "contact": {
+    "header":"Contact Us",
     "title": "Contact Us",
     "name": {
       "label": "Name",
