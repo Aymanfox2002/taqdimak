@@ -2,7 +2,7 @@ import i18n from "@/lib/i18n";
 import React from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 
-const ServicesNavigationArrows = ({ prevRef, nextRef }) => {
+const ServicesNavigationArrows = ({ prevRef, nextRef }: {prevRef:any ,nextRef:any }) => {
   return (
     <>
       <div className="hidden md:block absolute -left-10 top-[50%] text-[var(--gray)] text-[52px]">

@@ -1,9 +1,14 @@
+import { ProcessPaginationProps } from "@/types";
 import React from "react";
 
-const ProcessPagination = ({ slidesData, mainSwiper, activeIndex }) => {
+const ProcessPagination = ({
+  slidesData,
+  mainSwiper,
+  activeIndex,
+}: ProcessPaginationProps) => {
   return (
     <div className="hidden md:flex items-start justify-center gap-[80px]">
-      {slidesData.map((slide, index) => (
+      {slidesData.map((slide: string, index: number) => (
         <div
           onClick={() => mainSwiper?.slideTo(index)}
           key={index}

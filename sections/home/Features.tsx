@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Container,
   FeatLargeBox,
@@ -8,32 +8,17 @@ import {
   TitleSection,
 } from "../../components/index";
 import { useTranslation } from "react-i18next";
+import useMounted from "@/hooks/useMounted";
+import FeatureData from "@/data/FeatureData";
+import type { FeaturesContent } from "@/types";
 
 const Features = () => {
   const { t } = useTranslation();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
+  const featuresContent = FeatureData();
+  const largeBox: FeaturesContent = featuresContent[0];
+  const smallBoxes = [featuresContent[1], featuresContent[2]];
 
-  const list = t("services.features.list", { returnObjects: true });
-  const featuresContent = [
-    {
-      title: list[0].serviceName,
-      desc: list[0].serviceDescription,
-      href: "/",
-    },
-    {
-      title: list[1].serviceName,
-      desc: list[1].serviceDescription,
-      href: "/",
-    },
-    {
-      title: list[2].serviceName,
-      desc: list[2].serviceDescription,
-      href: "/",
-    },
-  ];
   if (!mounted) return null;
   return (
     <SectionBg>
@@ -43,10 +28,14 @@ const Features = () => {
           desc={t("services.features.sectionTitle.description")}
         />
         <div className="block lg:flex">
-          <FeatLargeBox featuresContent={featuresContent[0]} />
+          <FeatLargeBox
+            desc={largeBox.desc}
+            href={largeBox.href}
+            title={largeBox.title}
+          />
           <div className="flex-1 flex flex-col m-3 gap-y-6">
-            {[featuresContent[1], featuresContent[2]].map((ele, i) => (
-              <FeatSmallBox ele={ele} i={i} key={i} />
+            {smallBoxes.map((ele, i) => (
+              <FeatSmallBox  desc={ele.desc} title={ele.title} href={ele.href} i={i} key={i} />
             ))}
           </div>
         </div>

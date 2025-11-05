@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../lib/i18n";
 import { Joti_One, Marhey } from "next/font/google";
@@ -20,12 +20,10 @@ const fonts = {
 const Hero = () => {
   // use the custom hook to check if mounted
   const mounted = useMounted();
-  
   const { t } = useTranslation();
-  
-
   const isEn = i18n.language === "en";
-  const currentLng = isEn ? fonts.en : fonts.ar;
+
+  const currentLng = fonts[isEn ? "en" : "ar"];
 
   if (!mounted) return null;
   return (
@@ -43,7 +41,7 @@ const Hero = () => {
         <div className="text-center lg:w-[478px] lg:text-start  items-center">
           <h1
             className={`${
-              currentLng?.className || ""
+              currentLng.className || ""
             } text-[36px] text-base/13 tracking-tight gradient-heading`}
           >
             {t("home.hero.mainTitle")}

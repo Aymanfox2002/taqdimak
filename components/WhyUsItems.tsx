@@ -1,6 +1,7 @@
+import { WhyUsItemsProps } from "@/types";
 import React from "react";
 
-const WhyUsItems = ({index, feature}) => {
+const WhyUsItems = ({index, feature}: WhyUsItemsProps) => {
   return (
     <div
       key={index}

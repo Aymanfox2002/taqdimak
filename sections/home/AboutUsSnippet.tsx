@@ -17,7 +17,7 @@ const AboutUsSnippet = () => {
   const { t } = useTranslation();
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: mounted ? sectionRef : null,
+    target: mounted ? sectionRef : undefined,
     offset: ["start end", "end start"],
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -350]);

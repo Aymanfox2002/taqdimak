@@ -3,8 +3,10 @@ import React from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import i18n from "@/lib/i18n";
 import { useTranslation } from "react-i18next";
+import { ServicesSlideCardProps } from "@/types";
 
-const ServicesSlideCard = ({ slide }) => {
+
+const ServicesSlideCard = ({ slide }: ServicesSlideCardProps) => {
   const { t } = useTranslation();
   const arrowDir =
     i18n.language === "en" ? (

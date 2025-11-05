@@ -1,0 +1,5 @@
+export * from "./home"
+export * from "./global"
+export * from "./header"
+export * from "./about"
+export * from "./services"

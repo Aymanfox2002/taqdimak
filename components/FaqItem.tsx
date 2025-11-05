@@ -4,8 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import type { Faq } from "@/types";
 
-const FaqItem = ({ i, ele }) => {
+const FaqItem = ({ i, ele }: Faq) => {
   return (
     <AccordionItem
       key={i}

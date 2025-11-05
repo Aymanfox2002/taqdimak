@@ -15,7 +15,6 @@ import {
 import { useTranslation } from "react-i18next";
 import i18n from "@/lib/i18n";
 import { ProcessData } from "@/data/ProcessData";
-import { useEffect, useState } from "react";
 import useMounted from "@/hooks/useMounted";
 
 const Process = () => {

@@ -1,7 +1,8 @@
+import type { OurClientsSlide } from "@/types";
 import Image from "next/image";
 import React from "react";
 
-const OurClientsSlide = ({activeIndex, i, testi}) => {
+const OurClientsSlide = ({ activeIndex, i, testi }: OurClientsSlide) => {
   return (
     <div
       className={` ms-auto me-auto flex-1 max-w-[300px] md:max-w-full flex items-center cursor-pointer hover:opacity-100 transition-all duration-200 py-10 text-sm md ${

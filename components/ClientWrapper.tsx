@@ -17,20 +17,23 @@ const alexandria = Alexandria({
   weight: "500",
 });
 
-export default function ClientWrapper({
-  children,
-}: {
+interface ClientWrapperProps {
   children: React.ReactNode;
-}) {
-  const [isReady, setIsReady] = useState(false);
+}
+
+type Lang = "ar" | "en";
+type ToasterPosition = "bottom-right" | "bottom-left";
+
+export default function ClientWrapper({ children }: ClientWrapperProps) {
+  const [isReady, setIsReady] = useState<boolean>(false);
 
   useEffect(() => {
     const html = document.documentElement;
-    const lang = i18n.language || "ar";
+    const lang: Lang = (i18n.language as Lang) || "ar";
     html.lang = lang;
     html.dir = lang === "ar" ? "rtl" : "ltr";
 
-    const updateDirection = () => {
+    const updateDirection = (): void => {
       const newLang = i18n.language;
       html.lang = newLang;
       html.dir = newLang === "ar" ? "rtl" : "ltr";
@@ -46,7 +49,7 @@ export default function ClientWrapper({
 
   const fontClass =
     i18n.language === "en" ? ubuntu.className : alexandria.className;
-  const toasterPosition =
+  const toasterPosition: ToasterPosition =
     i18n.language === "en" ? "bottom-right" : "bottom-left";
 
   return (

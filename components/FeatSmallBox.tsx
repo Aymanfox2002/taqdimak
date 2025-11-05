@@ -1,11 +1,11 @@
-
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import i18n from "@/lib/i18n";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import type { SmallBox } from "@/types";
 
-const FeatSmallBox = ({ ele, i }) => {
+const FeatSmallBox = ({ title, desc, href, i }: SmallBox) => {
   const { t } = useTranslation();
 
   return (
@@ -17,13 +17,13 @@ const FeatSmallBox = ({ ele, i }) => {
     >
       <div className="bg-black/50 absolute left-0 top-0 w-full h-full" />
       <div className="text-white relative text-center md:text-start">
-        <h1 className="text-lg mb-2.5 md:text-3xl">{ele.title}</h1>
+        <h1 className="text-lg mb-2.5 md:text-3xl">{title}</h1>
         <p className="text-sm lg:text-lg font-light text-white/80 mb-1.5 w-[70%] ms-auto me-auto md:ms-0 md:mb-10">
-          {ele.desc}
+          {desc}
         </p>
         <div className="">
           <Link
-            href={ele.href}
+            href={href}
             className="text-sm  md:text-lg flex items-center justify-center md:justify-start gap-2"
           >
             {t("services.showMore")}

@@ -1,14 +1,12 @@
 import React from "react";
-//@ts-ignore
 import "./globals.css";
 import ClientWrapper from "../components/ClientWrapper";
 
-
-export default function RootLayout({
-  children,
-}: {
+interface Children {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: Children) {
   return (
     <html>
       <body className="bg-[var(--teal-100-bg)]">

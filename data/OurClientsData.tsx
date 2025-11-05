@@ -4,11 +4,15 @@ import av_7 from "@/public/assets/images/avatar-7.png";
 import av_8 from "@/public/assets/images/avatar-8.png";
 import av_9 from "@/public/assets/images/avatar-9.png";
 import { Autoplay, Controller } from "swiper/modules";
+import { OurClientsDataProps } from "@/types";
 
 const OurClientsData = () => {
   const { t } = useTranslation();
-  const testimonialsData = t("about.testimonials", { returnObjects: true });
-  const testimonials = [
+  const testimonialsData = t("about.testimonials", {
+    returnObjects: true,
+  }) as OurClientsDataProps[];
+
+  const testimonials: OurClientsDataProps[] = [
     {
       text: testimonialsData[0].text,
       user: testimonialsData[0].user,
@@ -28,6 +32,7 @@ const OurClientsData = () => {
       avatar: av_9,
     },
   ];
+
   const [mainSwiper, setMainSwiper] = useState<any>(null);
   const [thumbSwiper, setThumbSwiper] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);

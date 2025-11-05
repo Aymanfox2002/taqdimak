@@ -4,6 +4,7 @@ import what_they_say_1 from "@/public/assets/images/what_they_say_1.webp";
 import what_they_say_2 from "@/public/assets/images/what_they_say_2.webp";
 import what_they_say_3 from "@/public/assets/images/what_they_say_3.webp";
 import { Navigation } from "swiper/modules";
+import { SuccessStoriesProps } from "@/types";
 
 const StoriesData = () => {
   // setup the custom arrows
@@ -20,13 +21,15 @@ const StoriesData = () => {
     returnObjects: true,
   }) as any;
 
-  const successStoriesArr = successStoriesData.map((item, i) => ({
-    image: [what_they_say_1, what_they_say_2, what_they_say_3][i % 3],
-    title: item.title,
-    description: item.description,
-    name: item.name,
-    position: item.position,
-  }));
+  const successStoriesArr = successStoriesData.map(
+    (item: SuccessStoriesProps, i: number) => ({
+      image: [what_they_say_1, what_they_say_2, what_they_say_3][i % 3],
+      title: item.title,
+      description: item.description,
+      name: item.name,
+      position: item.position,
+    })
+  );
 
   const swiperConfig = {
     modules: [Navigation],

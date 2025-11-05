@@ -1,7 +1,8 @@
+import { StoriesSlideProps } from "@/types";
 import Image from "next/image";
 import React from "react";
 
-const StoriesSlide = ({ item }) => {
+const StoriesSlide = ({ item }: StoriesSlideProps) => {
   return (
     <div className="lg:flex cursor-grab ms-auto me-auto m-10  flex-col lg:flex-row shadow-xl overflow-clip rounded-3xl bg-[var(--teal-100)] max-w-[382px] lg:max-w-none">
       <div className="h-[382px] lg:h-auto overflow-clip mb-12 lg:mb-0 relative lg:basis-3/8 border min-w-5">

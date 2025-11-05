@@ -3,9 +3,9 @@ import { RiTeamFill } from "react-icons/ri";
 import { TbPackages } from "react-icons/tb";
 import { FaCircleInfo } from "react-icons/fa6";
 import { TFunction } from "i18next";
+import type { MenuItem } from "@/types";
 
-
-export const getMenuItems = (t: TFunction) => [
+export const getMenuItems = (t: TFunction): MenuItem[] => [
   {
     label: t("header.nav.home"),
     icon: (

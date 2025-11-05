@@ -3,8 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import collegeClass from "../../public/assets/images/collegeClass.webp";
 import { HoverCardContent } from "@/components/ui/hover-card";
-const MegaMenu = ({ menuItems }: { menuItems: any }) => {
+import { MegaMenuProps } from "@/types";
+
+
+
+const MegaMenu = ({ menuItems }: MegaMenuProps) => {
   
+
   return (
     <HoverCardContent
       sideOffset={30}
@@ -12,7 +17,7 @@ const MegaMenu = ({ menuItems }: { menuItems: any }) => {
     >
       <div className="flex gap-8">
         <nav className="lg:w-[260px] w-[300px] xl:w-[300px]">
-          {menuItems[1].children.slice(0, 4).map((ele, i: number) => (
+          {menuItems[1]?.children?.slice(0, 4).map((ele, i: number) => (
             <Link
               href={ele.href}
               key={i}
@@ -24,7 +29,7 @@ const MegaMenu = ({ menuItems }: { menuItems: any }) => {
           ))}
         </nav>
         <nav className="lg:w-[260px] w-[300px] xl:w-[300px]">
-          {menuItems[1].children.slice(4).map((ele, i: number) => (
+          {menuItems[1]?.children?.slice(4).map((ele, i: number) => (
             <Link
               href={ele.href}
               key={i}

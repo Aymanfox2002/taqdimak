@@ -12,13 +12,11 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../lib/i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoriesData from "@/data/StoriesData";
-// @ts-ignore
 import "swiper/css";
-// @ts-ignore
 import "swiper/css/navigation";
-// @ts-ignore
 import "swiper/css/pagination";
 import useMounted from "@/hooks/useMounted";
+import { SuccessStoriesProps } from "@/types";
 
 const SuccessStories = () => {
   const { t } = useTranslation();
@@ -32,9 +30,8 @@ const SuccessStories = () => {
     activeIndex,
     setActiveIndex,
     successStoriesArr,
-    swiperConfig
+    swiperConfig,
   } = StoriesData();
-
 
   // use the custom hook to check if mounted
   const mounted = useMounted();
@@ -63,7 +60,7 @@ const SuccessStories = () => {
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             {...swiperConfig}
           >
-            {successStoriesArr.map((item, i) => (
+            {successStoriesArr.map((item: SuccessStoriesProps, i: number) => (
               <SwiperSlide key={i}>
                 <StoriesSlide item={item} />
               </SwiperSlide>

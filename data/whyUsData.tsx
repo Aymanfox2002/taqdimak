@@ -1,8 +1,9 @@
 "use client";
+import { TFunction } from "i18next";
 import { FaBolt, FaPaintRoller, FaThumbsUp } from "react-icons/fa6";
 
 
-const whyUsData = (t) => {
+const whyUsData = (t: TFunction) => {
      const reasons = [
       {
         icon: <FaBolt size={80} className="text-white" />,

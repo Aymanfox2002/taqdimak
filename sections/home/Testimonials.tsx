@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import {
   Container,
   TitleSection,
@@ -10,12 +10,10 @@ import explode_shape_2 from "../../public/assets/images/explode_shape_2.webp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { testimonialsData } from "@/data/testimonials";
+import useMounted from "@/hooks/useMounted";
 
 const Testimonials = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
   const { t } = useTranslation();
   const sectionRef = useRef(null);
 

@@ -9,15 +9,11 @@ import { servicesData } from "@/data/servicesData";
 import useServicesSwiperArrows from "@/hooks/useServicesSwiperArrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-//@ts-ignore
 import "swiper/css";
-//@ts-ignore
 import "swiper/css/navigation";
-//@ts-ignore
 import "swiper/css/pagination";
 import { useTranslation } from "react-i18next";
 import i18n from "@/lib/i18n";
-import { useEffect, useState } from "react";
 import ServicesNavigationArrows from "@/components/ServicesNavigationArrows";
 import useMounted from "@/hooks/useMounted";
 

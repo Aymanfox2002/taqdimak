@@ -3,8 +3,9 @@ import { SheetClose } from "./ui/sheet";
 import Link from "next/link";
 import { Buttons, LangBtnMobile } from "@/components/index";
 import { useTranslation } from "react-i18next";
+import { MobileNavMenuProps } from "@/types";
 
-const MobileNavMenu = ({ menuItems, lang, setLang }) => {
+const MobileNavMenu = ({ menuItems, lang, setLang }: MobileNavMenuProps) => {
   const { t } = useTranslation();
   return (
     <nav

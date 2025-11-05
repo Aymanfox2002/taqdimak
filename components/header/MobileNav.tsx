@@ -1,5 +1,4 @@
 "use client";
-import { useTranslation } from "react-i18next";
 import { IoMenu } from "react-icons/io5";
 import i18n from "@/lib/i18n";
 import {MobileNavMenu} from "@/components/index"
@@ -13,12 +12,13 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { useEffect, useState } from "react";
+import { MenuItem } from "@/types";
 
 interface MobileNavProps {
   mobileOpen?: boolean;
   lang: string;
   setLang: any;
-  menuItems: any;
+  menuItems: MenuItem[];
 }
 
 export default function MobileNav({

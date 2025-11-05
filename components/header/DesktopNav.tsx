@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { MegaMenu, Buttons } from "../index";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { HoverCard, HoverCardTrigger } from "@/components/ui/hover-card";
+import type { DesktopNavProps } from "@/types";
 
-const DesktopNav = ({ menuItems }: { menuItems: any }) => {
+const DesktopNav = ({ menuItems }: DesktopNavProps) => {
   const { t } = useTranslation();
 
   return (
@@ -26,7 +27,7 @@ const DesktopNav = ({ menuItems }: { menuItems: any }) => {
                       <IoIosArrowDown className="ms-2.5 text-xl" />
                     </Link>
                   </HoverCardTrigger>
-                    <MegaMenu menuItems={menuItems} />
+                  <MegaMenu menuItems={menuItems} />
                 </HoverCard>
               </>
             ) : (
