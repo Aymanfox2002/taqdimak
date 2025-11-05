@@ -37,20 +37,7 @@ npm install
 npm run dev
 ```
 
----
 
 
-## 📂 Folder Structure
 
-```
-src/
- ├── app/             # App Router pages/layouts
- ├── components/      # Reusable UI components
- ├── sections/        # Page sections
- └── lib/             # i18n config and utilities
-public/
- └── locales/         # Translations (en, ar)
-```
-
----
 
