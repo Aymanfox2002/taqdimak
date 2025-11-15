@@ -1,10 +1,23 @@
+import { inferedSchema } from "@/types";
+import { TFunction } from "i18next";
 import { toast } from "sonner";
 
+/**
+ * 
+ * Sends the contact form values to the backend and shows a toast
+ * message based on the request result.
+ * 
+ * @async
+ * @param {object} values - form field to submit.
+ * @param {TFunction} t - Translation function.
+ * @param {() => void} reset - Callback to reset the form after success.
+ * @return {promise<void>} Resolves when the request and UI feedback are completed.
+ */
 export async function submitContactForm(
-  values: any,
-  t: any,
+  values: inferedSchema,
+  t: TFunction,
   reset: () => void
-) {
+): Promise<void> {
   try {
     const res = await fetch("/api/send", {
       method: "POST",
@@ -33,6 +46,3 @@ export async function submitContactForm(
     });
   }
 }
-
-
-

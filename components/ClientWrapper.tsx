@@ -1,6 +1,6 @@
 "use client";
 import { I18nextProvider } from "react-i18next";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { Ubuntu, Alexandria } from "next/font/google";
 import i18n from "../lib/i18n";
 import { Footer, Header } from "../sections";
@@ -24,7 +24,22 @@ interface ClientWrapperProps {
 type Lang = "ar" | "en";
 type ToasterPosition = "bottom-right" | "bottom-left";
 
-export default function ClientWrapper({ children }: ClientWrapperProps) {
+/**
+ * ---
+ *
+ * Client-side wrapper that initializes language settings (dir & lang),
+ * applies font families based on the current language, and provides
+ * global layout components such as Header, Footer, and Toaster.
+ *
+ * This component replaces the layout for client-only environments
+ * and ensures correct UI direction (rtl/ltr) before rendering the page.
+ *
+ * @param {ClientWrapperProps} props - all sections and components here.
+ * @returns {JSX.Element} The rendered client wrapper including global providers.
+ */
+export default function ClientWrapper({
+  children,
+}: ClientWrapperProps): JSX.Element {
   const [isReady, setIsReady] = useState<boolean>(false);
 
   useEffect(() => {
